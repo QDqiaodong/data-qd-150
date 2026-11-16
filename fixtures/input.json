@@ -1,0 +1,40 @@
+{
+  "as_of": "2026-11-16",
+  "lots": [
+    {
+      "id": "L1",
+      "sku": "milk",
+      "expires": "2026-11-16",
+      "quantity": 8,
+      "held": 2
+    },
+    {
+      "id": "L2",
+      "sku": "milk",
+      "expires": "2026-11-20",
+      "quantity": 10,
+      "held": 0
+    },
+    {
+      "id": "L0",
+      "sku": "milk",
+      "expires": "2026-11-15",
+      "quantity": 5,
+      "held": 0
+    }
+  ],
+  "orders": [
+    {
+      "id": "O1",
+      "sku": "milk",
+      "priority": 1,
+      "quantity": 9
+    },
+    {
+      "id": "O2",
+      "sku": "milk",
+      "priority": 2,
+      "quantity": 8
+    }
+  ]
+}
