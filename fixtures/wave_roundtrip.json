@@ -1,0 +1,30 @@
+{
+  "fulfillment": {
+    "as_of": "2026-11-16",
+    "lots": [
+      {"id": "LA", "sku": "milk", "expires": "2026-11-20", "quantity": 2, "held": 0},
+      {"id": "LB", "sku": "milk", "expires": "2026-11-20", "quantity": 1, "held": 0}
+    ],
+    "orders": [
+      {"id": "O1", "sku": "milk", "priority": 1, "quantity": 3}
+    ]
+  },
+  "warehouse": {
+    "depot": "D",
+    "nodes": ["D", "A", "B"],
+    "edges": [
+      {"id": "D-A", "from": "D", "to": "A", "distance": 1, "max_load": 3},
+      {"id": "A-B", "from": "A", "to": "B", "distance": 1, "max_load": 0},
+      {"id": "B-A", "from": "B", "to": "A", "distance": 1, "max_load": 1},
+      {"id": "A-D", "from": "A", "to": "D", "distance": 1, "max_load": 3}
+    ],
+    "lot_nodes": [
+      {"lot": "LA", "node": "A"},
+      {"lot": "LB", "node": "B"}
+    ],
+    "sku_grams": [
+      {"sku": "milk", "grams": 1}
+    ],
+    "cart_capacity": 3
+  }
+}

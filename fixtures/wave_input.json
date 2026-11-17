@@ -1,0 +1,45 @@
+{
+  "fulfillment": {
+    "as_of": "2026-11-16",
+    "lots": [
+      {"id": "L1", "sku": "milk", "expires": "2026-11-20", "quantity": 6, "held": 0},
+      {"id": "L2", "sku": "milk", "expires": "2026-11-25", "quantity": 6, "held": 0},
+      {"id": "L9", "sku": "milk", "expires": "2026-11-15", "quantity": 5, "held": 0},
+      {"id": "E1", "sku": "egg", "expires": "2026-11-22", "quantity": 4, "held": 0},
+      {"id": "H1", "sku": "milk", "expires": "2026-11-21", "quantity": 3, "held": 3}
+    ],
+    "orders": [
+      {"id": "O1", "sku": "milk", "priority": 2, "quantity": 7},
+      {"id": "O2", "sku": "milk", "priority": 1, "quantity": 4},
+      {"id": "O3", "sku": "egg", "priority": 3, "quantity": 6},
+      {"id": "O4", "sku": "juice", "priority": 4, "quantity": 2}
+    ]
+  },
+  "warehouse": {
+    "depot": "D",
+    "nodes": ["D", "A", "B", "C"],
+    "edges": [
+      {"id": "D-A", "from": "D", "to": "A", "distance": 2, "max_load": 20},
+      {"id": "A-D", "from": "A", "to": "D", "distance": 2, "max_load": 20},
+      {"id": "D-B", "from": "D", "to": "B", "distance": 3, "max_load": 20},
+      {"id": "B-D", "from": "B", "to": "D", "distance": 3, "max_load": 20},
+      {"id": "D-C", "from": "D", "to": "C", "distance": 4, "max_load": 15},
+      {"id": "C-D", "from": "C", "to": "D", "distance": 4, "max_load": 15},
+      {"id": "A-B", "from": "A", "to": "B", "distance": 1, "max_load": 20},
+      {"id": "B-A", "from": "B", "to": "A", "distance": 1, "max_load": 20}
+    ],
+    "lot_nodes": [
+      {"lot": "L1", "node": "A"},
+      {"lot": "L2", "node": "B"},
+      {"lot": "L9", "node": "A"},
+      {"lot": "E1", "node": "C"},
+      {"lot": "H1", "node": "C"}
+    ],
+    "sku_grams": [
+      {"sku": "milk", "grams": 2},
+      {"sku": "egg", "grams": 3},
+      {"sku": "juice", "grams": 5}
+    ],
+    "cart_capacity": 20
+  }
+}

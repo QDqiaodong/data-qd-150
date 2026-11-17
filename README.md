@@ -1,11 +1,12 @@
 # data-qd-150 · 易腐品批次履约
 
-FEFO lot allocation with expiry, holds and shortage reconciliation。业务输入、计算和当前边界详见 [数据契约 v1](docs/contract.md) 与 [承诺账本 v2](docs/contract-v2.md)。
+FEFO lot allocation with expiry, holds and shortage reconciliation。业务输入、计算和当前边界详见 [数据契约 v1](docs/contract.md)、[承诺账本 v2](docs/contract-v2.md) 与 [载重波次 v3](docs/contract-v3.md)。
 
-本仓包含两个边界清晰、互不依赖的模式：
+本仓包含三个边界清晰、互不依赖的模式：
 
 - **v1 单日分配器（无状态，保留原行为）**：`perishable-fulfillment --source --output`，逐订单 FEFO 贪心，输出 `schema_version=1`。
 - **v2 易腐品承诺账本（有状态、可连续使用）**：`perishable-book book-init|book-apply|book-report`，SQLite 持久化、事件溯源、三层全局承诺规划，输出 `schema_version=2`。已拣实物不可重新分配，未拣预留可随事件调整。
+- **v3 载重约束的整单拣货波次（无状态，只读 v1 结果）**：`perishable-wave --source --output`，直接调用 v1 分配器，把固定结果编译成仓内波次、有向行走与逐次装载清单，输出 `schema_version=3`。不修改分配、不写库存、不读取 v2 账本。
 
 ## 安装与演示
 
@@ -46,13 +47,31 @@ python3 -m perishable_fulfillment.book book-report \
 
 提交后若报告文件写出失败，数据库事实不回滚，命令以退出码 3 结束；用相同请求字节重试即可恢复原回执。规划采用紧凑整数网络流（不展开 10^9 库存、无浮点），三层目标与存储/一致性代价见 [contract-v2.md](docs/contract-v2.md)。
 
+### v3 载重约束拣货波次 CLI（仅标准库，离线）
+
+```sh
+# 把 v1 固定分配编译成波次、有向行走与逐次装载清单
+python3 -m perishable_fulfillment.wave \
+  --source fixtures/wave_input.json --output run/wave.json
+
+# 静态最短回边不可承重、必须绕行的合法路线
+python3 -m perishable_fulfillment.wave \
+  --source fixtures/wave_detour.json --output run/detour.json
+
+# 必须先经过某货位而不取、从别处取货后再回来整取
+python3 -m perishable_fulfillment.wave \
+  --source fixtures/wave_roundtrip.json --output run/roundtrip.json
+```
+
+输入顶层严格为 `{fulfillment, warehouse}`：`fulfillment` 是原 v1 输入（本模式最多 8 订单、64 批次），`warehouse` 是有向载重路网。先最小化波数、再最小化总距离，再按订单组元组与动作签名取字典序最小；路线状态包含已取货位集合，路过不自动拾取，载重含等号。某个订单单独不可达时整次命令失败并列出这些订单。完整契约、守恒与独立枚举说明见 [contract-v3.md](docs/contract-v3.md)。
+
 输入JSON最多8MB，拒绝重复键、非有限数值和未定义字段；源字节SHA256随结果保留。
 输出是可独立读取的JSON；成功后原子替换，输入/计算失败退出2并保留旧报告。
 输入和输出不得相同，输出符号链接拒绝。单操作者批处理，不承诺并发发布或断电恢复。
 同输入重跑不累加。测试使用临时目录，运行产物在忽略的run/。
 
 src/perishable_fulfillment/model.py 为业务模型，相关算法模块独立组织；common.py 提供受限JSON及报告发布，
-cli.py 衔接数据链路。fixtures 为明确自制样例，代码与样例采用MIT许可。
+cli.py 衔接数据链路，wave.py 为 v3 波次编译器。fixtures 为明确自制样例，代码与样例采用MIT许可。
 
 ## Scope and sample
 # Perishable lot fulfillment v1
