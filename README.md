@@ -1,6 +1,11 @@
 # data-qd-150 · 易腐品批次履约
 
-FEFO lot allocation with expiry, holds and shortage reconciliation。业务输入、计算和当前边界详见 [数据契约](docs/contract.md)。
+FEFO lot allocation with expiry, holds and shortage reconciliation。业务输入、计算和当前边界详见 [数据契约 v1](docs/contract.md) 与 [承诺账本 v2](docs/contract-v2.md)。
+
+本仓包含两个边界清晰、互不依赖的模式：
+
+- **v1 单日分配器（无状态，保留原行为）**：`perishable-fulfillment --source --output`，逐订单 FEFO 贪心，输出 `schema_version=1`。
+- **v2 易腐品承诺账本（有状态、可连续使用）**：`perishable-book book-init|book-apply|book-report`，SQLite 持久化、事件溯源、三层全局承诺规划，输出 `schema_version=2`。已拣实物不可重新分配，未拣预留可随事件调整。
 
 ## 安装与演示
 
@@ -18,6 +23,28 @@ python3 -m venv .venv
 
 本地已有wheel时，安装构建工具可加 `--no-index --find-links <公共wheel缓存目录>`。
 修改源码后重新安装。本仓不共享其他仓环境，不依赖Docker、外部账号或持续服务。
+
+### v2 承诺账本 CLI（仅标准库，离线）
+
+```sh
+# 仅创建新账本：revision=0 并计算首份承诺
+python3 -m perishable_fulfillment.book book-init \
+  --db run/book.db --source fixtures/book_source.json
+
+# 提交一个事件批次（pick/set_hold/put_order/cancel_order，最多128项）
+python3 -m perishable_fulfillment.book book-apply \
+  --db run/book.db --source fixtures/book_request_pick.json --output run/r1.json
+
+# 后续批次：提高保鲜要求、收紧准入、冻结，未拣承诺自动迁移
+python3 -m perishable_fulfillment.book book-apply \
+  --db run/book.db --source fixtures/book_request_tighten.json --output run/r2.json
+
+# 打印当前版本回执；相同 request_id + 相同字节的 apply 重试返回原报告
+python3 -m perishable_fulfillment.book book-report \
+  --db run/book.db --output run/current.json
+```
+
+提交后若报告文件写出失败，数据库事实不回滚，命令以退出码 3 结束；用相同请求字节重试即可恢复原回执。规划采用紧凑整数网络流（不展开 10^9 库存、无浮点），三层目标与存储/一致性代价见 [contract-v2.md](docs/contract-v2.md)。
 
 输入JSON最多8MB，拒绝重复键、非有限数值和未定义字段；源字节SHA256随结果保留。
 输出是可独立读取的JSON；成功后原子替换，输入/计算失败退出2并保留旧报告。

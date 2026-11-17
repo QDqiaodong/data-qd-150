@@ -1,0 +1,30 @@
+{
+  "as_of": "2026-11-16",
+  "lots": [
+    {
+      "id": "A",
+      "sku": "milk",
+      "expires": "2026-11-18",
+      "quantity": 4,
+      "held": 0
+    },
+    {
+      "id": "B",
+      "sku": "milk",
+      "expires": "2026-11-25",
+      "quantity": 4,
+      "held": 0
+    }
+  ],
+  "orders": [
+    {
+      "id": "O1",
+      "sku": "milk",
+      "priority": 1,
+      "quantity": 4,
+      "ship_date": "2026-11-16",
+      "min_life": 0,
+      "allowed_lots": ["A", "B"]
+    }
+  ]
+}

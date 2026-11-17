@@ -19,17 +19,30 @@ def rows(value,limit=20000):
     return value
 
 def read(path):
-    with Path(path).open('rb') as stream:raw=stream.read(8_000_001)
-    if len(raw)>8_000_000:raise ValueError('JSON exceeds 8 MB')
+    raw = read_bytes(path)
+    return parse_json(raw), hashlib.sha256(raw).hexdigest()
+
+
+def read_bytes(path):
+    with Path(path).open('rb') as stream:
+        raw = stream.read(8_000_001)
+    if len(raw) > 8_000_000:
+        raise ValueError('JSON exceeds 8 MB')
+    return raw
+
+
+def parse_json(raw):
     def unique(pairs):
-        result={}
-        for k,v in pairs:
-            if k in result:raise ValueError('duplicate JSON key: '+k)
-            result[k]=v
+        result = {}
+        for k, v in pairs:
+            if k in result:
+                raise ValueError('duplicate JSON key: ' + k)
+            result[k] = v
         return result
-    def invalid(v):raise ValueError('nonfinite JSON number: '+v)
-    data=json.loads(raw,object_pairs_hook=unique,parse_constant=invalid)
-    return data,hashlib.sha256(raw).hexdigest()
+
+    def invalid(v):
+        raise ValueError('nonfinite JSON number: ' + v)
+    return json.loads(raw, object_pairs_hook=unique, parse_constant=invalid)
 
 def save(path,report):
     dest=Path(path)
