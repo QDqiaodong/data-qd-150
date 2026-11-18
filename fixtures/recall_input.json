@@ -1,0 +1,51 @@
+{
+  "schema_version": 5,
+  "fulfillment": {
+    "as_of": "2026-11-18",
+    "lots": [
+      {"id": "A", "sku": "milk", "expires": "2026-11-25", "quantity": 1, "held": 0},
+      {"id": "B", "sku": "milk", "expires": "2026-11-25", "quantity": 1, "held": 0}
+    ],
+    "orders": [
+      {"id": "O1", "sku": "milk", "priority": 0, "quantity": 1},
+      {"id": "O2", "sku": "milk", "priority": 1, "quantity": 1}
+    ]
+  },
+  "trace": {
+    "nodes": ["T", "C", "M", "LA", "LB"],
+    "sources": [
+      {"node": "T", "quantity": 1, "tainted": 1},
+      {"node": "C", "quantity": 1, "tainted": 0}
+    ],
+    "transfers": [
+      {"id": "e1", "from": "T", "to": "M", "quantity": 1, "lower": 0, "upper": 1},
+      {"id": "e2", "from": "C", "to": "M", "quantity": 1, "lower": 0, "upper": 1},
+      {"id": "e3", "from": "M", "to": "LA", "quantity": 1, "lower": 0, "upper": 1},
+      {"id": "e4", "from": "M", "to": "LB", "quantity": 1, "lower": 0, "upper": 1}
+    ],
+    "lot_nodes": [
+      {"node": "LA", "lot": "A"},
+      {"node": "LB", "lot": "B"}
+    ],
+    "waste_nodes": []
+  },
+  "queries": [
+    {
+      "id": "q_joint_at_least_one",
+      "bounds": [
+        {"kind": "order", "id": "O1", "lower": 1, "upper": 1000000000000000000},
+        {"kind": "order", "id": "O2", "lower": 1, "upper": 1000000000000000000}
+      ]
+    },
+    {
+      "id": "q_force_o1",
+      "bounds": [
+        {"kind": "order", "id": "O1", "lower": 1, "upper": 1}
+      ]
+    },
+    {
+      "id": "q_empty",
+      "bounds": []
+    }
+  ]
+}

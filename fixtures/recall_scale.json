@@ -1,0 +1,1832 @@
+{
+  "schema_version": 5,
+  "fulfillment": {
+    "as_of": "2026-11-18",
+    "lots": [
+      {
+        "id": "L0",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L1",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L2",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L3",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L4",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L5",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L6",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L7",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L8",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L9",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L10",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L11",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L12",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L13",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L14",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      },
+      {
+        "id": "L15",
+        "sku": "milk",
+        "expires": "2026-12-31",
+        "quantity": 100,
+        "held": 25
+      }
+    ],
+    "orders": [
+      {
+        "id": "O0",
+        "sku": "milk",
+        "priority": 0,
+        "quantity": 50
+      },
+      {
+        "id": "O1",
+        "sku": "milk",
+        "priority": 1,
+        "quantity": 50
+      },
+      {
+        "id": "O2",
+        "sku": "milk",
+        "priority": 2,
+        "quantity": 50
+      },
+      {
+        "id": "O3",
+        "sku": "milk",
+        "priority": 3,
+        "quantity": 50
+      },
+      {
+        "id": "O4",
+        "sku": "milk",
+        "priority": 4,
+        "quantity": 50
+      },
+      {
+        "id": "O5",
+        "sku": "milk",
+        "priority": 5,
+        "quantity": 50
+      },
+      {
+        "id": "O6",
+        "sku": "milk",
+        "priority": 6,
+        "quantity": 50
+      },
+      {
+        "id": "O7",
+        "sku": "milk",
+        "priority": 7,
+        "quantity": 50
+      },
+      {
+        "id": "O8",
+        "sku": "milk",
+        "priority": 8,
+        "quantity": 50
+      },
+      {
+        "id": "O9",
+        "sku": "milk",
+        "priority": 9,
+        "quantity": 50
+      },
+      {
+        "id": "O10",
+        "sku": "milk",
+        "priority": 10,
+        "quantity": 50
+      },
+      {
+        "id": "O11",
+        "sku": "milk",
+        "priority": 11,
+        "quantity": 50
+      },
+      {
+        "id": "O12",
+        "sku": "milk",
+        "priority": 12,
+        "quantity": 50
+      },
+      {
+        "id": "O13",
+        "sku": "milk",
+        "priority": 13,
+        "quantity": 50
+      },
+      {
+        "id": "O14",
+        "sku": "milk",
+        "priority": 14,
+        "quantity": 50
+      },
+      {
+        "id": "O15",
+        "sku": "milk",
+        "priority": 15,
+        "quantity": 50
+      }
+    ]
+  },
+  "trace": {
+    "nodes": [
+      "S0",
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "M0",
+      "M1",
+      "M2",
+      "M3",
+      "M4",
+      "M5",
+      "M6",
+      "M7",
+      "M8",
+      "M9",
+      "M10",
+      "M11",
+      "M12",
+      "M13",
+      "M14",
+      "M15",
+      "M16",
+      "M17",
+      "M18",
+      "M19",
+      "M20",
+      "M21",
+      "M22",
+      "M23",
+      "M24",
+      "M25",
+      "M26",
+      "M27",
+      "M28",
+      "M29",
+      "M30",
+      "M31",
+      "M32",
+      "M33",
+      "M34",
+      "M35",
+      "M36",
+      "M37",
+      "M38",
+      "M39",
+      "P0",
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9",
+      "P10",
+      "P11",
+      "P12",
+      "P13",
+      "P14",
+      "P15",
+      "P16",
+      "P17",
+      "P18",
+      "P19",
+      "P20",
+      "P21",
+      "P22",
+      "P23",
+      "T0",
+      "T1",
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T7",
+      "T8",
+      "T9",
+      "T10",
+      "T11",
+      "T12",
+      "T13",
+      "T14",
+      "T15",
+      "T16",
+      "T17",
+      "T18",
+      "T19",
+      "T20",
+      "T21",
+      "T22",
+      "T23"
+    ],
+    "sources": [
+      {
+        "node": "S0",
+        "quantity": 300,
+        "tainted": 100
+      },
+      {
+        "node": "S1",
+        "quantity": 300,
+        "tainted": 100
+      },
+      {
+        "node": "S2",
+        "quantity": 300,
+        "tainted": 100
+      },
+      {
+        "node": "S3",
+        "quantity": 300,
+        "tainted": 100
+      },
+      {
+        "node": "S4",
+        "quantity": 300,
+        "tainted": 100
+      },
+      {
+        "node": "S5",
+        "quantity": 300,
+        "tainted": 100
+      },
+      {
+        "node": "S6",
+        "quantity": 300,
+        "tainted": 100
+      },
+      {
+        "node": "S7",
+        "quantity": 300,
+        "tainted": 100
+      }
+    ],
+    "transfers": [
+      {
+        "id": "E000",
+        "from": "S0",
+        "to": "M0",
+        "quantity": 100,
+        "lower": 1,
+        "upper": 100
+      },
+      {
+        "id": "E001",
+        "from": "S0",
+        "to": "M1",
+        "quantity": 100,
+        "lower": 1,
+        "upper": 100
+      },
+      {
+        "id": "E002",
+        "from": "S0",
+        "to": "M2",
+        "quantity": 100,
+        "lower": 1,
+        "upper": 100
+      },
+      {
+        "id": "E003",
+        "from": "S1",
+        "to": "M3",
+        "quantity": 100,
+        "lower": 1,
+        "upper": 100
+      },
+      {
+        "id": "E004",
+        "from": "S1",
+        "to": "M4",
+        "quantity": 100,
+        "lower": 1,
+        "upper": 100
+      },
+      {
+        "id": "E005",
+        "from": "S1",
+        "to": "M5",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E006",
+        "from": "S2",
+        "to": "M6",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E007",
+        "from": "S2",
+        "to": "M7",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E008",
+        "from": "S2",
+        "to": "M8",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E009",
+        "from": "S3",
+        "to": "M9",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E010",
+        "from": "S3",
+        "to": "M10",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E011",
+        "from": "S3",
+        "to": "M11",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E012",
+        "from": "S4",
+        "to": "M12",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E013",
+        "from": "S4",
+        "to": "M13",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E014",
+        "from": "S4",
+        "to": "M14",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E015",
+        "from": "S5",
+        "to": "M15",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E016",
+        "from": "S5",
+        "to": "M16",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E017",
+        "from": "S5",
+        "to": "M17",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E018",
+        "from": "S6",
+        "to": "M18",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E019",
+        "from": "S6",
+        "to": "M19",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E020",
+        "from": "S6",
+        "to": "M20",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E021",
+        "from": "S7",
+        "to": "M21",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E022",
+        "from": "S7",
+        "to": "M22",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E023",
+        "from": "S7",
+        "to": "M23",
+        "quantity": 100,
+        "lower": 0,
+        "upper": 100
+      },
+      {
+        "id": "E024",
+        "from": "M0",
+        "to": "P0",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E025",
+        "from": "M0",
+        "to": "P7",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E026",
+        "from": "M1",
+        "to": "P1",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E027",
+        "from": "M1",
+        "to": "P8",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E028",
+        "from": "M2",
+        "to": "P2",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E029",
+        "from": "M2",
+        "to": "P9",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E030",
+        "from": "M3",
+        "to": "P3",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E031",
+        "from": "M3",
+        "to": "P10",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E032",
+        "from": "M4",
+        "to": "P4",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E033",
+        "from": "M4",
+        "to": "P11",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E034",
+        "from": "M5",
+        "to": "P5",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E035",
+        "from": "M5",
+        "to": "P12",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E036",
+        "from": "M6",
+        "to": "P6",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E037",
+        "from": "M6",
+        "to": "P13",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E038",
+        "from": "M7",
+        "to": "P7",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E039",
+        "from": "M7",
+        "to": "P14",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E040",
+        "from": "M8",
+        "to": "P8",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E041",
+        "from": "M8",
+        "to": "P15",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E042",
+        "from": "M9",
+        "to": "P9",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E043",
+        "from": "M9",
+        "to": "P16",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E044",
+        "from": "M10",
+        "to": "P10",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E045",
+        "from": "M10",
+        "to": "P17",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E046",
+        "from": "M11",
+        "to": "P11",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E047",
+        "from": "M11",
+        "to": "P18",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E048",
+        "from": "M12",
+        "to": "P12",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E049",
+        "from": "M12",
+        "to": "P19",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E050",
+        "from": "M13",
+        "to": "P13",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E051",
+        "from": "M13",
+        "to": "P20",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E052",
+        "from": "M14",
+        "to": "P14",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E053",
+        "from": "M14",
+        "to": "P21",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E054",
+        "from": "M15",
+        "to": "P15",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E055",
+        "from": "M15",
+        "to": "P22",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E056",
+        "from": "M16",
+        "to": "P16",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E057",
+        "from": "M16",
+        "to": "P23",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E058",
+        "from": "M17",
+        "to": "P17",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E059",
+        "from": "M17",
+        "to": "P0",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E060",
+        "from": "M18",
+        "to": "P18",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E061",
+        "from": "M18",
+        "to": "P1",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E062",
+        "from": "M19",
+        "to": "P19",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E063",
+        "from": "M19",
+        "to": "P2",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E064",
+        "from": "M20",
+        "to": "P20",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E065",
+        "from": "M20",
+        "to": "P3",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E066",
+        "from": "M21",
+        "to": "P21",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E067",
+        "from": "M21",
+        "to": "P4",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E068",
+        "from": "M22",
+        "to": "P22",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E069",
+        "from": "M22",
+        "to": "P5",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E070",
+        "from": "M23",
+        "to": "P23",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E071",
+        "from": "M23",
+        "to": "P6",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E072",
+        "from": "M24",
+        "to": "P0",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E073",
+        "from": "M24",
+        "to": "P7",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E074",
+        "from": "M25",
+        "to": "P1",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E075",
+        "from": "M25",
+        "to": "P8",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E076",
+        "from": "M26",
+        "to": "P2",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E077",
+        "from": "M26",
+        "to": "P9",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E078",
+        "from": "M27",
+        "to": "P3",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E079",
+        "from": "M27",
+        "to": "P10",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E080",
+        "from": "M28",
+        "to": "P4",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E081",
+        "from": "M28",
+        "to": "P11",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E082",
+        "from": "M29",
+        "to": "P5",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E083",
+        "from": "M29",
+        "to": "P12",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E084",
+        "from": "M30",
+        "to": "P6",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E085",
+        "from": "M30",
+        "to": "P13",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E086",
+        "from": "M31",
+        "to": "P7",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E087",
+        "from": "M31",
+        "to": "P14",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E088",
+        "from": "M32",
+        "to": "P8",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E089",
+        "from": "M32",
+        "to": "P15",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E090",
+        "from": "M33",
+        "to": "P9",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E091",
+        "from": "M33",
+        "to": "P16",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E092",
+        "from": "M34",
+        "to": "P10",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E093",
+        "from": "M34",
+        "to": "P17",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E094",
+        "from": "M35",
+        "to": "P11",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E095",
+        "from": "M35",
+        "to": "P18",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E096",
+        "from": "M36",
+        "to": "P12",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E097",
+        "from": "M36",
+        "to": "P19",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E098",
+        "from": "M37",
+        "to": "P13",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E099",
+        "from": "M37",
+        "to": "P20",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E100",
+        "from": "M38",
+        "to": "P14",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E101",
+        "from": "M38",
+        "to": "P21",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E102",
+        "from": "M39",
+        "to": "P15",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E103",
+        "from": "M39",
+        "to": "P22",
+        "quantity": 0,
+        "lower": 0,
+        "upper": 0
+      },
+      {
+        "id": "E104",
+        "from": "P0",
+        "to": "T0",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E105",
+        "from": "P0",
+        "to": "T1",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E106",
+        "from": "P1",
+        "to": "T1",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E107",
+        "from": "P1",
+        "to": "T2",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E108",
+        "from": "P2",
+        "to": "T2",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E109",
+        "from": "P2",
+        "to": "T3",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E110",
+        "from": "P3",
+        "to": "T3",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E111",
+        "from": "P3",
+        "to": "T4",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E112",
+        "from": "P4",
+        "to": "T4",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E113",
+        "from": "P4",
+        "to": "T5",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E114",
+        "from": "P5",
+        "to": "T5",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E115",
+        "from": "P5",
+        "to": "T6",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E116",
+        "from": "P6",
+        "to": "T6",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E117",
+        "from": "P6",
+        "to": "T7",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E118",
+        "from": "P7",
+        "to": "T7",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E119",
+        "from": "P7",
+        "to": "T8",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E120",
+        "from": "P8",
+        "to": "T8",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E121",
+        "from": "P8",
+        "to": "T9",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E122",
+        "from": "P9",
+        "to": "T9",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E123",
+        "from": "P9",
+        "to": "T10",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E124",
+        "from": "P10",
+        "to": "T10",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E125",
+        "from": "P10",
+        "to": "T11",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E126",
+        "from": "P11",
+        "to": "T11",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E127",
+        "from": "P11",
+        "to": "T12",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E128",
+        "from": "P12",
+        "to": "T12",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E129",
+        "from": "P12",
+        "to": "T13",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E130",
+        "from": "P13",
+        "to": "T13",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E131",
+        "from": "P13",
+        "to": "T14",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E132",
+        "from": "P14",
+        "to": "T14",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E133",
+        "from": "P14",
+        "to": "T15",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E134",
+        "from": "P15",
+        "to": "T15",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E135",
+        "from": "P15",
+        "to": "T16",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E136",
+        "from": "P16",
+        "to": "T16",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E137",
+        "from": "P16",
+        "to": "T17",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E138",
+        "from": "P17",
+        "to": "T17",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E139",
+        "from": "P17",
+        "to": "T18",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E140",
+        "from": "P18",
+        "to": "T18",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E141",
+        "from": "P18",
+        "to": "T19",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E142",
+        "from": "P19",
+        "to": "T19",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E143",
+        "from": "P19",
+        "to": "T20",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E144",
+        "from": "P20",
+        "to": "T20",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E145",
+        "from": "P20",
+        "to": "T21",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E146",
+        "from": "P21",
+        "to": "T21",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E147",
+        "from": "P21",
+        "to": "T22",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E148",
+        "from": "P22",
+        "to": "T22",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E149",
+        "from": "P22",
+        "to": "T23",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E150",
+        "from": "P23",
+        "to": "T23",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      },
+      {
+        "id": "E151",
+        "from": "P23",
+        "to": "T0",
+        "quantity": 50,
+        "lower": 0,
+        "upper": 50
+      }
+    ],
+    "lot_nodes": [
+      {
+        "node": "T0",
+        "lot": "L0"
+      },
+      {
+        "node": "T1",
+        "lot": "L1"
+      },
+      {
+        "node": "T2",
+        "lot": "L2"
+      },
+      {
+        "node": "T3",
+        "lot": "L3"
+      },
+      {
+        "node": "T4",
+        "lot": "L4"
+      },
+      {
+        "node": "T5",
+        "lot": "L5"
+      },
+      {
+        "node": "T6",
+        "lot": "L6"
+      },
+      {
+        "node": "T7",
+        "lot": "L7"
+      },
+      {
+        "node": "T8",
+        "lot": "L8"
+      },
+      {
+        "node": "T9",
+        "lot": "L9"
+      },
+      {
+        "node": "T10",
+        "lot": "L10"
+      },
+      {
+        "node": "T11",
+        "lot": "L11"
+      },
+      {
+        "node": "T12",
+        "lot": "L12"
+      },
+      {
+        "node": "T13",
+        "lot": "L13"
+      },
+      {
+        "node": "T14",
+        "lot": "L14"
+      },
+      {
+        "node": "T15",
+        "lot": "L15"
+      }
+    ],
+    "waste_nodes": [
+      "T16",
+      "T17",
+      "T18",
+      "T19",
+      "T20",
+      "T21",
+      "T22",
+      "T23"
+    ]
+  },
+  "queries": [
+    {
+      "id": "Q00",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O0",
+          "lower": 1,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q01",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O1",
+          "lower": 0,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q02",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O2",
+          "lower": 0,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q03",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O3",
+          "lower": 0,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q04",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O4",
+          "lower": 1,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q05",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O5",
+          "lower": 0,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q06",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O6",
+          "lower": 0,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q07",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O7",
+          "lower": 0,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q08",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O8",
+          "lower": 1,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q09",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O9",
+          "lower": 0,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q10",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O10",
+          "lower": 0,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q11",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O11",
+          "lower": 0,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q12",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O12",
+          "lower": 1,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q13",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O13",
+          "lower": 0,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q14",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O14",
+          "lower": 0,
+          "upper": 1000000000000000000
+        }
+      ]
+    },
+    {
+      "id": "Q15",
+      "bounds": [
+        {
+          "kind": "order",
+          "id": "O15",
+          "lower": 0,
+          "upper": 1000000000000000000
+        }
+      ]
+    }
+  ]
+}
