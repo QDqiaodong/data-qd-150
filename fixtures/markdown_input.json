@@ -1,0 +1,29 @@
+{
+  "schema_version": 4,
+  "fulfillment": {
+    "as_of": "2026-11-16",
+    "lots": [
+      {"id": "LA", "sku": "A", "expires": "2026-11-18", "quantity": 1, "held": 0},
+      {"id": "LB", "sku": "B", "expires": "2026-11-17", "quantity": 1, "held": 0}
+    ],
+    "orders": []
+  },
+  "dates": ["2026-11-17", "2026-11-18"],
+  "lot_costs": [
+    {"lot": "LA", "unit_cost": 0},
+    {"lot": "LB", "unit_cost": 0}
+  ],
+  "offers": [
+    {"date": "2026-11-17", "sku": "A", "options": [
+      {"id": "a11", "price": 11, "demand": 1, "discounted": true}]},
+    {"date": "2026-11-18", "sku": "A", "options": [
+      {"id": "a10", "price": 10, "demand": 1, "discounted": true}]},
+    {"date": "2026-11-17", "sku": "B", "options": [
+      {"id": "b9", "price": 9, "demand": 1, "discounted": true}]},
+    {"date": "2026-11-18", "sku": "B", "options": []}
+  ],
+  "promo_slots": [
+    {"date": "2026-11-17", "slots": 1},
+    {"date": "2026-11-18", "slots": 1}
+  ]
+}
