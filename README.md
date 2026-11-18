@@ -1,14 +1,15 @@
 # data-qd-150 · 易腐品批次履约
 
-FEFO lot allocation with expiry, holds and shortage reconciliation。业务输入、计算和当前边界详见 [数据契约 v1](docs/contract.md)、[承诺账本 v2](docs/contract-v2.md)、[载重波次 v3](docs/contract-v3.md) 与 [零售促销日程 v4](docs/contract-v4.md)。
+FEFO lot allocation with expiry, holds and shortage reconciliation。业务输入、计算和当前边界详见 [数据契约 v1](docs/contract.md)、[承诺账本 v2](docs/contract-v2.md)、[载重波次 v3](docs/contract-v3.md)、[零售促销日程 v4](docs/contract-v4.md)、[批次召回 v5](docs/contract-v5.md) 与 [冷链到货放行 v6](docs/contract-v6.md)。
 
-本仓包含四个边界清晰、互不依赖的模式：
+本仓包含六个边界清晰、互不依赖的模式：
 
 - **v1 单日分配器（无状态，保留原行为）**：`perishable-fulfillment --source --output`，逐订单 FEFO 贪心，输出 `schema_version=1`。
 - **v2 易腐品承诺账本（有状态、可连续使用）**：`perishable-book book-init|book-apply|book-report`，SQLite 持久化、事件溯源、三层全局承诺规划，输出 `schema_version=2`。已拣实物不可重新分配，未拣预留可随事件调整。
 - **v3 载重约束的整单拣货波次（无状态，只读 v1 结果）**：`perishable-wave --source --output`，直接调用 v1 分配器，把固定结果编译成仓内波次、有向行走与逐次装载清单，输出 `schema_version=3`。不修改分配、不写库存、不读取 v2 账本。
 - **v4 离线零售促销日程分析（无状态、只读 v1 余量）**：`perishable-markdown --source --output`，以 v1 逐 lot `available_remaining` 为未来零售初始库存，联合选择各 SKU 每日公开价位或不销售，在每日折扣名额下求整期毛利精确最优并追溯逐 lot 售出/过期/结余，输出 `schema_version=4`。只做一次性离线分析，不写真实库存或价格，不读取 v2 账本或 v3 路网。
 - **v5 离线批次召回影响分析（无状态、只读固定 v1 履约去向）**：`perishable-recall --source --output`，在来源批次确定污染件数、拆分混装有向无环图与固定 v1 分段上，求各收货对象污染件数的紧确 min/max 区间（clear/certain/possible），并对最多 16 个联合查询返回可行性与字典序最小的完整污染见证，输出 `schema_version=5`。只做一次性只读数据分析，不写真实库存。
+- **v6 一次性离线冷链到货放行分析（无状态，只读固定 v1 allocation）**：`perishable-coldchain --source --output`，把装箱行、到货数量与带时标温度观测关联到固定 v1 订单-批次，按逐 SKU 温区/缺口策略以精确有理数计算超温曝光，输出每个订单-批次的未装箱、短装与可放行/须隔离/证据不足数量，输出 `schema_version=6`。只产生可追溯离线放行报告，不写库存、账本、订单或价格，不按温控结果重新分配，不读取 v2 账本、v3 路线、v4 促销或 v5 召回图。
 
 ## 安装与演示
 
@@ -107,13 +108,32 @@ report = compile_report(data, digest)       # 返回完整 schema_version=5 报�
 
 输入顶层严格为 `{schema_version, fulfillment, trace, queries}`（`schema_version=5`）；`fulfillment` 是原 v1 对象且不加追溯字段，`trace` 是 96 节点/256 边以内的有向无环物料图，`queries` 最多 16 个联合界查询。件是不可分包装单位，拆分混装只搬运件并守恒件数；污染未知量按有界整数流求解，逐对象给出紧确 `min_tainted/max_tainted` 与 clear/certain/possible 状态，并对每个可行查询输出字典序最小的完整边/分段见证。结构非法（守恒、环、映射、字段等）退出 2；结构合法但无整数污染解释时成功输出 `status=inconsistent`。完整契约、算法说明与独立小整数枚举 oracle 验收见 [contract-v5.md](docs/contract-v5.md)。代表性规模样例见 `fixtures/recall_scale.json`（96 节点、152 边、16 lot/订单/查询）。
 
+### v6 离线冷链到货放行 CLI（仅标准库，离线）
+
+```sh
+# 跨午夜累计超温整箱隔离、共箱多 SKU 独立放行、边缘缺读数证据不足的可手算案例
+python3 -m perishable_fulfillment.coldchain \
+  --source fixtures/coldchain_input.json --output run/coldchain.json
+```
+
+也可安装后直接用 `perishable-coldchain --source INPUT.json --output REPORT.json`，或在 Python 中调用：
+
+```python
+from perishable_fulfillment.common import read
+from perishable_fulfillment.coldchain import compile_report
+data, digest = read('INPUT.json')          # 严格 JSON + 源字节 SHA-256
+report = compile_report(data, digest)       # 返回完整 schema_version=6 报告
+```
+
+输入顶层严格为 `{schema_version, fulfillment, policies, packages}`（`schema_version=6`）；`fulfillment` 是原 v1 对象，固定 allocation 直接取自未修改的 `model.analyze`。`policies` 按 SKU 唯一覆盖全部 lot/order SKU，各自给出 `min_c/max_c` 与两个分钟上限；`packages` 最多 256 个，含带时区运输窗口、严格递增读数（每包≥1 条、每包≤4096 条）与每行≤512 的装箱行。相邻读数在 `max_gap_minutes` 内按线性温度解释、超限整段为未观测缺口且不插值，首尾边缘只做恒定温度覆盖或判缺口；穿越温区边界的时刻与超温时长全部用 `fractions.Fraction` 精确计算，曝光达阈即隔离（即使另有缺口），未达阈但有缺口为证据不足，完整覆盖且曝光低于时限才放行。每个正 allocation 严格满足 `allocation = unshipped + short_shipped + received_release + received_quarantine + received_unknown`。完整契约、两种计算结构的取舍与独立有理数 oracle 验收见 [contract-v6.md](docs/contract-v6.md)。
+
 输入JSON最多8MB，拒绝重复键、非有限数值和未定义字段；源字节SHA256随结果保留。
 输出是可独立读取的JSON；成功后原子替换，输入/计算失败退出2并保留旧报告。
 输入和输出不得相同，输出符号链接拒绝。单操作者批处理，不承诺并发发布或断电恢复。
 同输入重跑不累加。测试使用临时目录，运行产物在忽略的run/。
 
 src/perishable_fulfillment/model.py 为业务模型，相关算法模块独立组织；common.py 提供受限JSON及报告发布，
-cli.py 衔接数据链路，wave.py 为 v3 波次编译器，markdown.py 为 v4 离线零售促销日程分析（公开入口 compile_report(data, source_sha256) / run(source_path)），recall.py 为 v5 离线批次召回影响分析（同签名 compile_report/run）。fixtures 为明确自制样例，代码与样例采用MIT许可。
+cli.py 衔接数据链路，wave.py 为 v3 波次编译器，markdown.py 为 v4 离线零售促销日程分析（公开入口 compile_report(data, source_sha256) / run(source_path)），recall.py 为 v5 离线批次召回影响分析（同签名 compile_report/run），coldchain.py 为 v6 一次性离线冷链到货放行分析（同签名 compile_report/run）。fixtures 为明确自制样例，代码与样例采用MIT许可。
 
 ## Scope and sample
 # Perishable lot fulfillment v1

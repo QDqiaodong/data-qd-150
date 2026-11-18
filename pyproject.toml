@@ -13,5 +13,6 @@ perishable-book = "perishable_fulfillment.book:main"
 perishable-wave = "perishable_fulfillment.wave:main"
 perishable-markdown = "perishable_fulfillment.markdown:main"
 perishable-recall = "perishable_fulfillment.recall:main"
+perishable-coldchain = "perishable_fulfillment.coldchain:main"
 [tool.setuptools.packages.find]
 where = ["src"]
