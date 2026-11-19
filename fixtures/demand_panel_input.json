@@ -1,0 +1,892 @@
+{
+  "calendar_start": "2026-11-20",
+  "censored_target_policy": "mask_days",
+  "cutoff_date": "2026-11-26",
+  "evidence_as_of": "2026-11-27T00:00:00Z",
+  "horizon_days": 2,
+  "lookback_days": 2,
+  "observations": [
+    {
+      "covered_minutes": 1440,
+      "date": "2026-11-20",
+      "promoted": false,
+      "sku": "milk",
+      "sold_units": 3
+    },
+    {
+      "covered_minutes": 1440,
+      "date": "2026-11-21",
+      "promoted": false,
+      "sku": "milk",
+      "sold_units": 3
+    },
+    {
+      "covered_minutes": 1440,
+      "date": "2026-11-22",
+      "promoted": false,
+      "sku": "milk",
+      "sold_units": 4
+    },
+    {
+      "covered_minutes": 1440,
+      "date": "2026-11-23",
+      "promoted": false,
+      "sku": "milk",
+      "sold_units": 0
+    },
+    {
+      "covered_minutes": 1440,
+      "date": "2026-11-24",
+      "promoted": false,
+      "sku": "milk",
+      "sold_units": 5
+    },
+    {
+      "covered_minutes": 1440,
+      "date": "2026-11-25",
+      "promoted": false,
+      "sku": "milk",
+      "sold_units": 5
+    },
+    {
+      "covered_minutes": 1440,
+      "date": "2026-11-26",
+      "promoted": false,
+      "sku": "milk",
+      "sold_units": 6
+    }
+  ],
+  "schema_version": 8,
+  "shelf_witnesses": [
+    {
+      "end": "2026-11-24T00:00:00Z",
+      "id": "W23",
+      "lot": "L1",
+      "order": "O1",
+      "package": "P3",
+      "report_id": "R1",
+      "sku": "milk",
+      "start": "2026-11-23T00:00:00Z",
+      "visible_at": "2026-11-27T00:00:00Z"
+    },
+    {
+      "end": "2026-11-25T00:00:00Z",
+      "id": "W24",
+      "lot": "L1",
+      "order": "O1",
+      "package": "P3",
+      "report_id": "R1",
+      "sku": "milk",
+      "start": "2026-11-24T00:00:00Z",
+      "visible_at": "2026-11-25T00:00:00Z"
+    },
+    {
+      "end": "2026-11-26T00:00:00Z",
+      "id": "W25",
+      "lot": "L1",
+      "order": "O1",
+      "package": "P3",
+      "report_id": "R1",
+      "sku": "milk",
+      "start": "2026-11-25T00:00:00Z",
+      "visible_at": "2026-11-26T00:00:00Z"
+    },
+    {
+      "end": "2026-11-27T00:00:00Z",
+      "id": "W26",
+      "lot": "L1",
+      "order": "O1",
+      "package": "P3",
+      "report_id": "R1",
+      "sku": "milk",
+      "start": "2026-11-26T00:00:00Z",
+      "visible_at": "2026-11-27T00:00:00Z"
+    }
+  ],
+  "skus": [
+    "milk"
+  ],
+  "split_date": "2026-11-22",
+  "v6_reports": [
+    {
+      "report": {
+        "allocation": [
+          {
+            "lot": "L1",
+            "order": "O1",
+            "quantity": 8
+          },
+          {
+            "lot": "L1",
+            "order": "O2",
+            "quantity": 2
+          },
+          {
+            "lot": "L2",
+            "order": "O2",
+            "quantity": 5
+          },
+          {
+            "lot": "L3",
+            "order": "O3",
+            "quantity": 6
+          }
+        ],
+        "fulfillment": {
+          "lots": [
+            {
+              "available_initial": 10,
+              "available_remaining": 0,
+              "expired": false,
+              "held": 0,
+              "lot": "L1",
+              "quantity": 10,
+              "sku": "milk"
+            },
+            {
+              "available_initial": 10,
+              "available_remaining": 5,
+              "expired": false,
+              "held": 0,
+              "lot": "L2",
+              "quantity": 10,
+              "sku": "milk"
+            },
+            {
+              "available_initial": 6,
+              "available_remaining": 0,
+              "expired": false,
+              "held": 0,
+              "lot": "L3",
+              "quantity": 6,
+              "sku": "yogurt"
+            }
+          ],
+          "orders": [
+            {
+              "allocations": [
+                {
+                  "lot": "L1",
+                  "quantity": 8
+                }
+              ],
+              "fulfilled": 8,
+              "order": "O1",
+              "priority": 1,
+              "requested": 8,
+              "shortage": 0
+            },
+            {
+              "allocations": [
+                {
+                  "lot": "L3",
+                  "quantity": 6
+                }
+              ],
+              "fulfilled": 6,
+              "order": "O3",
+              "priority": 1,
+              "requested": 6,
+              "shortage": 0
+            },
+            {
+              "allocations": [
+                {
+                  "lot": "L1",
+                  "quantity": 2
+                },
+                {
+                  "lot": "L2",
+                  "quantity": 5
+                }
+              ],
+              "fulfilled": 7,
+              "order": "O2",
+              "priority": 2,
+              "requested": 7,
+              "shortage": 0
+            }
+          ],
+          "total_fulfilled": 21,
+          "total_requested": 21,
+          "total_shortage": 0
+        },
+        "line_verdicts": [
+          {
+            "disposition": "quarantine",
+            "lot": "L1",
+            "order": "O1",
+            "package": "P1",
+            "packed": 5,
+            "policy": {
+              "max_c": 8,
+              "max_excursion_minutes": 60,
+              "max_gap_minutes": 120,
+              "min_c": 2
+            },
+            "reasons": [
+              "provable_excursion_meets_or_exceeds_threshold"
+            ],
+            "received": 5,
+            "short_shipped": 0,
+            "sku": "milk",
+            "temperature_evidence": {
+              "covered_minutes": {
+                "denominator": 1,
+                "numerator": 360
+              },
+              "covered_segments": [
+                {
+                  "end": "2026-11-18T22:00:00+00:00",
+                  "end_temp_c": 10,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 40
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-18T20:00:00+00:00",
+                  "start_temp_c": 4
+                },
+                {
+                  "end": "2026-11-19T00:00:00+00:00",
+                  "end_temp_c": 10,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 120
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-18T22:00:00+00:00",
+                  "start_temp_c": 10
+                },
+                {
+                  "end": "2026-11-19T02:00:00+00:00",
+                  "end_temp_c": 4,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 40
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-19T00:00:00+00:00",
+                  "start_temp_c": 10
+                }
+              ],
+              "excursion_minutes": {
+                "denominator": 1,
+                "numerator": 200
+              },
+              "gap_minutes": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "gaps": [],
+              "window_minutes": {
+                "denominator": 1,
+                "numerator": 360
+              }
+            }
+          },
+          {
+            "disposition": "release",
+            "lot": "L1",
+            "order": "O1",
+            "package": "P3",
+            "packed": 3,
+            "policy": {
+              "max_c": 8,
+              "max_excursion_minutes": 60,
+              "max_gap_minutes": 120,
+              "min_c": 2
+            },
+            "reasons": [
+              "coverage_complete",
+              "provable_excursion_below_threshold"
+            ],
+            "received": 3,
+            "short_shipped": 0,
+            "sku": "milk",
+            "temperature_evidence": {
+              "covered_minutes": {
+                "denominator": 1,
+                "numerator": 120
+              },
+              "covered_segments": [
+                {
+                  "end": "2026-11-19T11:00:00+00:00",
+                  "end_temp_c": 4,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 0
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-19T10:00:00+00:00",
+                  "start_temp_c": 4
+                },
+                {
+                  "end": "2026-11-19T12:00:00+00:00",
+                  "end_temp_c": 4,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 0
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-19T11:00:00+00:00",
+                  "start_temp_c": 4
+                }
+              ],
+              "excursion_minutes": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "gap_minutes": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "gaps": [],
+              "window_minutes": {
+                "denominator": 1,
+                "numerator": 120
+              }
+            }
+          },
+          {
+            "disposition": "quarantine",
+            "lot": "L1",
+            "order": "O2",
+            "package": "P1",
+            "packed": 2,
+            "policy": {
+              "max_c": 8,
+              "max_excursion_minutes": 60,
+              "max_gap_minutes": 120,
+              "min_c": 2
+            },
+            "reasons": [
+              "provable_excursion_meets_or_exceeds_threshold"
+            ],
+            "received": 1,
+            "short_shipped": 1,
+            "sku": "milk",
+            "temperature_evidence": {
+              "covered_minutes": {
+                "denominator": 1,
+                "numerator": 360
+              },
+              "covered_segments": [
+                {
+                  "end": "2026-11-18T22:00:00+00:00",
+                  "end_temp_c": 10,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 40
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-18T20:00:00+00:00",
+                  "start_temp_c": 4
+                },
+                {
+                  "end": "2026-11-19T00:00:00+00:00",
+                  "end_temp_c": 10,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 120
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-18T22:00:00+00:00",
+                  "start_temp_c": 10
+                },
+                {
+                  "end": "2026-11-19T02:00:00+00:00",
+                  "end_temp_c": 4,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 40
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-19T00:00:00+00:00",
+                  "start_temp_c": 10
+                }
+              ],
+              "excursion_minutes": {
+                "denominator": 1,
+                "numerator": 200
+              },
+              "gap_minutes": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "gaps": [],
+              "window_minutes": {
+                "denominator": 1,
+                "numerator": 360
+              }
+            }
+          },
+          {
+            "disposition": "release",
+            "lot": "L2",
+            "order": "O2",
+            "package": "P2",
+            "packed": 3,
+            "policy": {
+              "max_c": 8,
+              "max_excursion_minutes": 60,
+              "max_gap_minutes": 120,
+              "min_c": 2
+            },
+            "reasons": [
+              "coverage_complete",
+              "provable_excursion_below_threshold"
+            ],
+            "received": 3,
+            "short_shipped": 0,
+            "sku": "milk",
+            "temperature_evidence": {
+              "covered_minutes": {
+                "denominator": 1,
+                "numerator": 240
+              },
+              "covered_segments": [
+                {
+                  "end": "2026-11-18T21:00:00+00:00",
+                  "end_temp_c": 4,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 0
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-18T20:00:00+00:00",
+                  "start_temp_c": 4
+                },
+                {
+                  "end": "2026-11-18T22:00:00+00:00",
+                  "end_temp_c": 4,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 0
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-18T21:00:00+00:00",
+                  "start_temp_c": 4
+                },
+                {
+                  "end": "2026-11-18T23:00:00+00:00",
+                  "end_temp_c": 4,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 0
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-18T22:00:00+00:00",
+                  "start_temp_c": 4
+                },
+                {
+                  "end": "2026-11-19T00:00:00+00:00",
+                  "end_temp_c": 4,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 0
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-18T23:00:00+00:00",
+                  "start_temp_c": 4
+                }
+              ],
+              "excursion_minutes": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "gap_minutes": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "gaps": [],
+              "window_minutes": {
+                "denominator": 1,
+                "numerator": 240
+              }
+            }
+          },
+          {
+            "disposition": "unknown",
+            "lot": "L2",
+            "order": "O2",
+            "package": "P4",
+            "packed": 2,
+            "policy": {
+              "max_c": 8,
+              "max_excursion_minutes": 60,
+              "max_gap_minutes": 120,
+              "min_c": 2
+            },
+            "reasons": [
+              "unobserved_gap_exceeds_max_gap_minutes",
+              "provable_excursion_below_threshold"
+            ],
+            "received": 2,
+            "short_shipped": 0,
+            "sku": "milk",
+            "temperature_evidence": {
+              "covered_minutes": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "covered_segments": [],
+              "excursion_minutes": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "gap_minutes": {
+                "denominator": 1,
+                "numerator": 150
+              },
+              "gaps": [
+                {
+                  "end": "2026-11-19T12:30:00+00:00",
+                  "reason": "trailing_edge_gap",
+                  "start": "2026-11-19T10:00:00+00:00"
+                }
+              ],
+              "window_minutes": {
+                "denominator": 1,
+                "numerator": 150
+              }
+            }
+          },
+          {
+            "disposition": "release",
+            "lot": "L3",
+            "order": "O3",
+            "package": "P2",
+            "packed": 3,
+            "policy": {
+              "max_c": 6,
+              "max_excursion_minutes": 30,
+              "max_gap_minutes": 60,
+              "min_c": 0
+            },
+            "reasons": [
+              "coverage_complete",
+              "provable_excursion_below_threshold"
+            ],
+            "received": 3,
+            "short_shipped": 0,
+            "sku": "yogurt",
+            "temperature_evidence": {
+              "covered_minutes": {
+                "denominator": 1,
+                "numerator": 240
+              },
+              "covered_segments": [
+                {
+                  "end": "2026-11-18T21:00:00+00:00",
+                  "end_temp_c": 4,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 0
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-18T20:00:00+00:00",
+                  "start_temp_c": 4
+                },
+                {
+                  "end": "2026-11-18T22:00:00+00:00",
+                  "end_temp_c": 4,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 0
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-18T21:00:00+00:00",
+                  "start_temp_c": 4
+                },
+                {
+                  "end": "2026-11-18T23:00:00+00:00",
+                  "end_temp_c": 4,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 0
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-18T22:00:00+00:00",
+                  "start_temp_c": 4
+                },
+                {
+                  "end": "2026-11-19T00:00:00+00:00",
+                  "end_temp_c": 4,
+                  "excursion_minutes": {
+                    "denominator": 1,
+                    "numerator": 0
+                  },
+                  "interpolation": "linear",
+                  "start": "2026-11-18T23:00:00+00:00",
+                  "start_temp_c": 4
+                }
+              ],
+              "excursion_minutes": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "gap_minutes": {
+                "denominator": 1,
+                "numerator": 0
+              },
+              "gaps": [],
+              "window_minutes": {
+                "denominator": 1,
+                "numerator": 240
+              }
+            }
+          }
+        ],
+        "order_summary": [
+          {
+            "fulfilled": 8,
+            "order": "O1",
+            "packed": 8,
+            "received_quarantine": 5,
+            "received_release": 3,
+            "received_unknown": 0,
+            "requested": 8,
+            "short_shipped": 0,
+            "shortage": 0,
+            "sku": "milk",
+            "unshipped": 0
+          },
+          {
+            "fulfilled": 7,
+            "order": "O2",
+            "packed": 7,
+            "received_quarantine": 1,
+            "received_release": 3,
+            "received_unknown": 2,
+            "requested": 7,
+            "short_shipped": 1,
+            "shortage": 0,
+            "sku": "milk",
+            "unshipped": 0
+          },
+          {
+            "fulfilled": 6,
+            "order": "O3",
+            "packed": 3,
+            "received_quarantine": 0,
+            "received_release": 3,
+            "received_unknown": 0,
+            "requested": 6,
+            "short_shipped": 0,
+            "shortage": 0,
+            "sku": "yogurt",
+            "unshipped": 3
+          }
+        ],
+        "packages": [
+          {
+            "id": "P1",
+            "lines": [
+              {
+                "lot": "L1",
+                "order": "O1",
+                "packed": 5,
+                "received": 5
+              },
+              {
+                "lot": "L1",
+                "order": "O2",
+                "packed": 2,
+                "received": 1
+              }
+            ],
+            "readings": [
+              {
+                "at": "2026-11-18T20:00:00+00:00",
+                "temp_c": 4
+              },
+              {
+                "at": "2026-11-18T22:00:00+00:00",
+                "temp_c": 10
+              },
+              {
+                "at": "2026-11-19T00:00:00+00:00",
+                "temp_c": 10
+              },
+              {
+                "at": "2026-11-19T02:00:00+00:00",
+                "temp_c": 4
+              }
+            ],
+            "transit_end": "2026-11-19T02:00:00+00:00",
+            "transit_start": "2026-11-18T20:00:00+00:00"
+          },
+          {
+            "id": "P2",
+            "lines": [
+              {
+                "lot": "L2",
+                "order": "O2",
+                "packed": 3,
+                "received": 3
+              },
+              {
+                "lot": "L3",
+                "order": "O3",
+                "packed": 3,
+                "received": 3
+              }
+            ],
+            "readings": [
+              {
+                "at": "2026-11-18T20:00:00+00:00",
+                "temp_c": 4
+              },
+              {
+                "at": "2026-11-18T21:00:00+00:00",
+                "temp_c": 4
+              },
+              {
+                "at": "2026-11-18T22:00:00+00:00",
+                "temp_c": 4
+              },
+              {
+                "at": "2026-11-18T23:00:00+00:00",
+                "temp_c": 4
+              },
+              {
+                "at": "2026-11-19T00:00:00+00:00",
+                "temp_c": 4
+              }
+            ],
+            "transit_end": "2026-11-19T00:00:00+00:00",
+            "transit_start": "2026-11-18T20:00:00+00:00"
+          },
+          {
+            "id": "P3",
+            "lines": [
+              {
+                "lot": "L1",
+                "order": "O1",
+                "packed": 3,
+                "received": 3
+              }
+            ],
+            "readings": [
+              {
+                "at": "2026-11-19T10:00:00+00:00",
+                "temp_c": 4
+              },
+              {
+                "at": "2026-11-19T11:00:00+00:00",
+                "temp_c": 4
+              },
+              {
+                "at": "2026-11-19T12:00:00+00:00",
+                "temp_c": 4
+              }
+            ],
+            "transit_end": "2026-11-19T12:00:00+00:00",
+            "transit_start": "2026-11-19T10:00:00+00:00"
+          },
+          {
+            "id": "P4",
+            "lines": [
+              {
+                "lot": "L2",
+                "order": "O2",
+                "packed": 2,
+                "received": 2
+              }
+            ],
+            "readings": [
+              {
+                "at": "2026-11-19T10:00:00+00:00",
+                "temp_c": 4
+              }
+            ],
+            "transit_end": "2026-11-19T12:30:00+00:00",
+            "transit_start": "2026-11-19T10:00:00+00:00"
+          }
+        ],
+        "policies": [
+          {
+            "max_c": 8,
+            "max_excursion_minutes": 60,
+            "max_gap_minutes": 120,
+            "min_c": 2,
+            "sku": "milk"
+          },
+          {
+            "max_c": 6,
+            "max_excursion_minutes": 30,
+            "max_gap_minutes": 60,
+            "min_c": 0,
+            "sku": "yogurt"
+          }
+        ],
+        "reconciliation": [
+          {
+            "allocation": 8,
+            "lot": "L1",
+            "order": "O1",
+            "packed": 8,
+            "received_quarantine": 5,
+            "received_release": 3,
+            "received_unknown": 0,
+            "short_shipped": 0,
+            "sku": "milk",
+            "unshipped": 0
+          },
+          {
+            "allocation": 2,
+            "lot": "L1",
+            "order": "O2",
+            "packed": 2,
+            "received_quarantine": 1,
+            "received_release": 0,
+            "received_unknown": 0,
+            "short_shipped": 1,
+            "sku": "milk",
+            "unshipped": 0
+          },
+          {
+            "allocation": 5,
+            "lot": "L2",
+            "order": "O2",
+            "packed": 5,
+            "received_quarantine": 0,
+            "received_release": 3,
+            "received_unknown": 2,
+            "short_shipped": 0,
+            "sku": "milk",
+            "unshipped": 0
+          },
+          {
+            "allocation": 6,
+            "lot": "L3",
+            "order": "O3",
+            "packed": 3,
+            "received_quarantine": 0,
+            "received_release": 3,
+            "received_unknown": 0,
+            "short_shipped": 0,
+            "sku": "yogurt",
+            "unshipped": 3
+          }
+        ],
+        "schema_version": 6,
+        "source_sha256": "7f8ea0d1684dcc151b2bcf6c33c77f659b14dbccb283a78c4d0c7ac7b23e3e86",
+        "totals": {
+          "allocation": 21,
+          "line_count": 6,
+          "package_count": 4,
+          "packed": 18,
+          "reading_count": 13,
+          "received_quarantine": 6,
+          "received_release": 9,
+          "received_unknown": 2,
+          "short_shipped": 1,
+          "unshipped": 3
+        }
+      },
+      "report_id": "R1"
+    }
+  ]
+}
